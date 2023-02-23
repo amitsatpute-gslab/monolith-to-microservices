@@ -6,3 +6,10 @@
 
 # misc
 .DS_Store
+
+.idea
+dist/*
+*.log
+*.env
+*.code-workspace
+.eslintcache

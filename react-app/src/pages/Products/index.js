@@ -47,10 +47,12 @@ export default function Products() {
 
   async function fetchData() {
     try {
-      const response = await fetch(`${process.env.REACT_APP_PRODUCTS_URL}`);
+      console.log("products::",process.env.REACT_APP_PRODUCTS_URL)
+      const response = await fetch("http://localhost:8080/service/products");
       const products = await response.json();
       setProducts(products);
     } catch (err) {
+      console.log("errpr:::", err)
       setErrors(true);
     }
   }

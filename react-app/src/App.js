@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
+import dotenv from "dotenv"
 import React from "react";
 
 import ClippedDrawer from "./components/ClippedDrawer";
@@ -22,7 +22,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({});
-
+dotenv.config()
 function App() {
   return (
     <ThemeProvider theme={theme}>

@@ -14,8 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const app = express();
+app.use(cors())
 const port = process.env.PORT || 8080;
 
 //Load orders and products for pseudo database
