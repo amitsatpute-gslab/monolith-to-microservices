@@ -3,17 +3,26 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "../../.env") });
 
+const {
+  DATABASE_HOST,
+  DATABASE_PORT,
+  DATABASE_USER,
+  DATABASE_PASSWORD,
+  DATABASE_NAME,
+} = process.env;
 
 module.exports = {
   development: {
     client: "mysql",
     connection: {
-      host: "localhost",
-      port: "3306",
-      user: "root",
-      password: "password",
-      database: "monolith",
+      host: DATABASE_HOST,
+      port: DATABASE_PORT,
+      user: DATABASE_USER,
+      password: DATABASE_PASSWORD,
+      database: DATABASE_NAME,
     },
     pool: {
       min: 2,
