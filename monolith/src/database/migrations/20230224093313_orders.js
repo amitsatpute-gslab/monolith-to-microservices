@@ -5,11 +5,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("orders", (table) => {
     table.uuid("id").primary().defaultTo(knex.raw("(UUID())"));
-    table
-      .uuid("order_id")
-      .references("id")
-      .inTable("order_items")
-      .notNullable();
+    table.json("product_ids");
     table.uuid("user_id").references("id").inTable("users").notNullable();
     table.float("total_cost").defaultTo(0);
     table.timestamp("created_at").defaultTo(knex.fn.now());
@@ -24,3 +20,5 @@ exports.up = function (knex) {
 exports.down = function (knex) {
   return knex.schema.dropTable("orders");
 };
+
+// ALterTable/
