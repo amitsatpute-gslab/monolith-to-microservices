@@ -1,0 +1,17 @@
+
+GET http://localhost:8080/service/products
+
+###
+
+POST http://localhost:8080/service/product
+content-type: application/json
+
+{
+    "name": "test product3",
+    "description":"description test product3",
+    "cost": 90,
+    "categories":["tech"],
+    "picture":"static/img/products/camera-lens.jpg"
+}
+
+###
