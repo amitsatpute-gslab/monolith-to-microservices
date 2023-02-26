@@ -16,9 +16,15 @@ limitations under the License.
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const { listProducts, productById } = require("./services/products");
+const {
+  listProducts,
+  productById,
+  addProduct,
+} = require("./services/products");
 const { listOrders, orderById } = require("./services/orders");
 const app = express();
+
+app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 8080;
 
@@ -39,6 +45,14 @@ app.get("/service/products", async (req, res) => {
 app.get("/service/products/:id", async (req, res) => {
   const product = await productById(req.params.id);
   return res.json(product);
+});
+
+// Add new products
+app.post("/service/product", async (req, res) => {
+  const body = {...req.body,categories:JSON.stringify(req.body.categories)};
+  console.log("body::", body)
+  const data = await addProduct(body);
+  return res.json(data);
 });
 
 //Get all orders
