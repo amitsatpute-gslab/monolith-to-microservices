@@ -18,6 +18,12 @@ const config = knexStringcase({
     database: DATABASE_NAME,
     user: DATABASE_USER,
     password: DATABASE_PASSWORD,
+    typeCast: function (field, next) {
+      if (field.type === "JSON") {
+        return JSON.parse(field.string());
+      }
+      return next();
+    },
   },
   migrations: {
     directory: "src/database/migrations",
@@ -26,6 +32,5 @@ const config = knexStringcase({
     directory: "src/database/seeds",
   },
 });
-
 
 module.exports = Knex(config);

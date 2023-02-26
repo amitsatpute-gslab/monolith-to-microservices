@@ -23,21 +23,21 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   paper: {
     maxWidth: "800px",
     margin: "0 auto",
-    padding: theme.spacing(3, 2)
+    padding: theme.spacing(3, 2),
   },
   table: {
-    minWidth: 650
+    minWidth: 650,
   },
   tableRow: {
-    cursor: "pointer"
-  }
+    cursor: "pointer",
+  },
 }));
 
 export default function Orders({ history }) {
@@ -82,7 +82,7 @@ export default function Orders({ history }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {orders.map(order => (
+              {orders.map((order) => (
                 <TableRow
                   hover
                   className={classes.tableRow}
@@ -94,11 +94,11 @@ export default function Orders({ history }) {
                   <TableCell component="th" scope="row">
                     {order.id}
                   </TableCell>
-                  <TableCell>{order.date}</TableCell>
+                  <TableCell>{order.createdAt}</TableCell>
                   <TableCell>
-                    {(order.items && order.items.length) || 0}
+                    {(order.productIds && order.productIds.length) || 0}
                   </TableCell>
-                  <TableCell>${order.cost}</TableCell>
+                  <TableCell>${order.totalCost}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

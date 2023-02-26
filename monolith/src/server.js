@@ -16,8 +16,10 @@ limitations under the License.
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const { listProducts, productById } = require("./services/products");
+const { listOrders, orderById } = require("./services/orders");
 const app = express();
-app.use(cors())
+app.use(cors());
 const port = process.env.PORT || 8080;
 
 //Load orders and products for pseudo database
@@ -28,24 +30,32 @@ const products = require("../data/products.json").products;
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 //Get all products
-app.get("/service/products", (req, res) => res.json(products));
+app.get("/service/products", async (req, res) => {
+  const productList = await listProducts();
+  return res.json(productList);
+});
 
 //Get products by ID
-app.get("/service/products/:id", (req, res) =>
-  res.json(products.find(product => product.id === req.params.id))
-);
+app.get("/service/products/:id", async (req, res) => {
+  const product = await productById(req.params.id);
+  return res.json(product);
+});
 
 //Get all orders
-app.get("/service/orders", (req, res) => res.json(orders));
+app.get("/service/orders", async (req, res) => {
+  const orderList = await listOrders();
+  return res.json(orderList);
+});
 
 //Get orders by ID
-app.get("/service/orders/:id", (req, res) =>
-  res.json(orders.find(order => order.id === req.params.id))
-);
+app.get("/service/orders/:id", async (req, res) => {
+  const order = await orderById(req.params.id);
+  return res.json(order);
+});
 
 //Client side routing fix on page refresh or direct browsing to non-root directory
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..",  "public", "index.html"), err => {
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"), (err) => {
     if (err) {
       res.status(500).send(err);
     }
