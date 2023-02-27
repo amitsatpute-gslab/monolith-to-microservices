@@ -59,11 +59,9 @@ async function updateProduct(productId, productObj) {
 
 async function deleteProduct(productId) {
   try {
-    console.log("delete service");
     const data = await knex("products").where("id", "=", productId).del();
-    console.log(typeof data);
     return {
-      message: data > 0 ? "Record deleted" : "Record not found",
+      message: data > 0 ? "Product deleted" : "Product not found",
       data: { productId: data > 0 ? productId : null },
     };
   } catch (e) {

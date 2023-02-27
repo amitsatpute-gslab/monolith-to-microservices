@@ -23,7 +23,13 @@ const {
   deleteProduct,
   updateProduct,
 } = require("./services/products");
-const { listOrders, orderById } = require("./services/orders");
+const {
+  listOrders,
+  orderById,
+  addOrder,
+  deleteOrder,
+  updateOrder,
+} = require("./services/orders");
 const app = express();
 
 app.use(express.json());
@@ -56,7 +62,7 @@ app.post("/service/addproduct", async (req, res) => {
   return res.json(data);
 });
 
-// update record
+// update product
 app.put("/service/updateproduct/:id", async (req, res) => {
   const body = { ...req.body, categories: JSON.stringify(req.body.categories) };
   const productId = req.params.id;
@@ -66,7 +72,6 @@ app.put("/service/updateproduct/:id", async (req, res) => {
 
 //Delete product
 app.delete("/service/deleteproduct/:id", async (req, res) => {
-  console.log("id::", req.params);
   const data = await deleteProduct(req.params.id);
   return res.json(data);
 });
@@ -81,6 +86,27 @@ app.get("/service/orders", async (req, res) => {
 app.get("/service/orders/:id", async (req, res) => {
   const order = await orderById(req.params.id);
   return res.json(order);
+});
+
+// Add new order
+app.post("/service/addorder", async (req, res) => {
+  const body = { ...req.body, productIds: JSON.stringify(req.body.productIds) };
+  const data = await addOrder(body);
+  return res.json(data);
+});
+
+// update order
+app.put("/service/updateorder/:id", async (req, res) => {
+  const body = { ...req.body, productIds: JSON.stringify(req.body.productIds) };
+  const orderId = req.params.id;
+  const data = await updateOrder(orderId, body);
+  return res.json(data);
+});
+
+//Delete order
+app.delete("/service/deleteorder/:id", async (req, res) => {
+  const data = await deleteOrder(req.params.id);
+  return res.json(data);
 });
 
 //Client side routing fix on page refresh or direct browsing to non-root directory
