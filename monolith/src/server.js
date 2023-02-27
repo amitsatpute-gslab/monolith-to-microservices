@@ -20,6 +20,8 @@ const {
   listProducts,
   productById,
   addProduct,
+  deleteProduct,
+  updateProduct,
 } = require("./services/products");
 const { listOrders, orderById } = require("./services/orders");
 const app = express();
@@ -42,16 +44,30 @@ app.get("/service/products", async (req, res) => {
 });
 
 //Get products by ID
-app.get("/service/products/:id", async (req, res) => {
+app.get("/service/product/:id", async (req, res) => {
   const product = await productById(req.params.id);
   return res.json(product);
 });
 
 // Add new products
-app.post("/service/product", async (req, res) => {
-  const body = {...req.body,categories:JSON.stringify(req.body.categories)};
-  console.log("body::", body)
+app.post("/service/addproduct", async (req, res) => {
+  const body = { ...req.body, categories: JSON.stringify(req.body.categories) };
   const data = await addProduct(body);
+  return res.json(data);
+});
+
+// update record
+app.put("/service/updateproduct/:id", async (req, res) => {
+  const body = { ...req.body, categories: JSON.stringify(req.body.categories) };
+  const productId = req.params.id;
+  const data = await updateProduct(productId, body);
+  return res.json(data);
+});
+
+//Delete product
+app.delete("/service/deleteproduct/:id", async (req, res) => {
+  console.log("id::", req.params);
+  const data = await deleteProduct(req.params.id);
   return res.json(data);
 });
 
