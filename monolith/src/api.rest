@@ -34,3 +34,5 @@ Content-Type: application/json
 ###
 DELETE http://localhost:8080/service/deleteproduct/579853a2-b66f-11ed-990e-0242ac130002
 
+###
+GET http://localhost:8080/service/ordersdetail/e0ff295b-5d84-4a0a-b7db-608ed0865dcd

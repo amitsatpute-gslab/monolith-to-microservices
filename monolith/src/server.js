@@ -29,6 +29,7 @@ const {
   addOrder,
   deleteOrder,
   updateOrder,
+  getOrderDetails,
 } = require("./services/orders");
 const app = express();
 
@@ -88,6 +89,11 @@ app.get("/service/orders/:id", async (req, res) => {
   return res.json(order);
 });
 
+app.get("/service/ordersdetail/:id", async (req, res) => {
+  const order = await getOrderDetails(req.params.id);
+  return res.json(order);
+});
+
 // Add new order
 app.post("/service/addorder", async (req, res) => {
   const body = { ...req.body, productIds: JSON.stringify(req.body.productIds) };
@@ -103,7 +109,7 @@ app.put("/service/updateorder/:id", async (req, res) => {
   return res.json(data);
 });
 
-//Delete order
+// Delete order
 app.delete("/service/deleteorder/:id", async (req, res) => {
   const data = await deleteOrder(req.params.id);
   return res.json(data);

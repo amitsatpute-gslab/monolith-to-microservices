@@ -1,4 +1,5 @@
 const knex = require("../../database/client.js");
+const { generateOrderDetails } = require("./dataFormatter.js");
 
 async function listOrders() {
   const orders = await knex("orders").select("*").from("orders");
@@ -71,4 +72,20 @@ async function deleteOrder(orderId) {
   }
 }
 
-module.exports = { listOrders, orderById, addOrder, deleteOrder, updateOrder };
+async function getOrderDetails(orderId) {
+  const order = await knex("orders")
+    .join("users", "orders.userId", "=", "users.id")
+    .select("orders.*", "users.email")
+    .where("orders.id", "=", orderId);
+  const data = generateOrderDetails(order[0]);
+  return data;
+}
+
+module.exports = {
+  listOrders,
+  orderById,
+  addOrder,
+  deleteOrder,
+  updateOrder,
+  getOrderDetails,
+};
