@@ -1,0 +1,38 @@
+
+GET http://localhost:8080/service/products
+
+###
+
+POST http://localhost:8080/service/addproduct
+content-type: application/json
+
+{
+    "name": "test product3",
+    "description":"description test product3",
+    "cost": 90,
+    "categories":["tech"],
+    "picture":"static/img/products/camera-lens.jpg"
+}
+
+###
+
+PUT http://localhost:8080/service/updateproduct/917c6fa6-b671-11ed-990e-0242ac130002
+Content-Type: application/json
+
+{
+    "name": "test product3",
+     "description": "description test product31",
+        "picture": "static/img/products/camera-lens.jpg",
+        "cost": 900,
+        "categories": [
+        "tech"
+    ]
+       
+}
+
+
+###
+DELETE http://localhost:8080/service/deleteproduct/579853a2-b66f-11ed-990e-0242ac130002
+
+###
+GET http://localhost:8080/service/ordersdetail/e0ff295b-5d84-4a0a-b7db-608ed0865dcd
