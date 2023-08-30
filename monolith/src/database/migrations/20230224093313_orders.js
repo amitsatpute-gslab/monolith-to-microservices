@@ -4,7 +4,7 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable("orders", (table) => {
-    table.uuid("id").primary().defaultTo(knex.raw("(UUID())"));
+    table.uuid("id").primary().defaultTo(knex.fn.uuid());
     table.json("product_ids");
     table.uuid("user_id").references("id").inTable("users").notNullable();
     table.float("total_cost").defaultTo(0);

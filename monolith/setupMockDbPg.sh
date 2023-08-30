@@ -2,11 +2,11 @@ CYAN=$(tput setaf 6)
 normal=$(tput sgr0)
 export $(cat .env)
 printf "${CYAN}Creating Database\n${normal}"
-npm run createDb
+npm run createDbPg
 printf "${CYAN}Database created\n${normal}"
 
 printf "${CYAN}Running migrations\n${normal}"
-npm run migrate
+npm run migratePg
 printf "${CYAN}Migration done\n${normal}"
 
 printf "${CYAN}Adding mockdata\n${normal}"

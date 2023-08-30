@@ -6,9 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon ./src/server.js",
-    "start": "npm run createDb && npm run server",
-    "createDb": "node ./src/database/createDB.js",
-    "migrate": "npx knex migrate:latest --knexfile src/database/knexfile.js"
+    "start": "export $(cat .env) && npm run server",
+    "createDb": "export $(cat .env) && node ./src/database/createDB.js",
+    "createDbPg": "export $(cat .env) && npx ts-node --esm ./src/database/createDbPg.ts",
+    "migratePg": "export $(cat .env) && npx ts-node --esm ./node_modules/.bin/knex migrate:latest --knexfile ./src/database/knexfilePg.ts",
+    "migrate": "export $(cat .env) && npx knex migrate:latest --knexfile src/database/knexfile.js"
   },
   "keywords": [],
   "author": "",
@@ -17,13 +19,16 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
-    "knex": "^2.4.2",
+    "knex": "^2.5.1",
     "knex-stringcase": "^1.4.6",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
-    "pg": "^8.9.0",
+    "pg": "^8.11.3",
     "pgtools": "^0.3.2",
     "postgres": "^3.3.3",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.10.2"
   }
 }
