@@ -9,7 +9,7 @@ exports.up = function (knex) {
     table.string("description");
     table.string("picture");
     table.float("cost").defaultTo(0);
-    table.json("categories");
+    table.string("categories");
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table.timestamp("updated_at").defaultTo(knex.fn.now());
   });

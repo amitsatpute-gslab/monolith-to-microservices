@@ -35,7 +35,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 
 //Load orders and products for pseudo database
 const orders = require("../data/orders.json").orders;

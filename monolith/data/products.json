@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": "OLJCESPC7Z",
+            "id": 1,
             "name": "Vintage Typewriter",
             "description": "This typewriter looks good in your living room.",
             "picture": "static/img/products/typewriter.jpg",
@@ -9,7 +9,7 @@
             "categories": ["vintage"]
         },
         {
-            "id": "66VCHSJNUP",
+            "id": 2,
             "name": "Vintage Camera Lens",
             "description": "You won't have a camera to use it and it probably doesn't work anyway.",
             "picture": "static/img/products/camera-lens.jpg",
@@ -17,7 +17,7 @@
             "categories": ["photography", "vintage"]
         },
         {
-            "id": "1YMWWN1N4O",
+            "id": 3,
             "name": "Home Barista Kit",
             "description": "Always wanted to brew coffee with Chemex and Aeropress at home?",
             "picture": "static/img/products/barista-kit.jpg",
@@ -25,7 +25,7 @@
             "categories": ["cookware"]
         },
         {
-            "id": "L9ECAV7KIM",
+            "id": 4,
             "name": "Terrarium",
             "description": "This terrarium will looks great in your white painted living room.",
             "picture": "static/img/products/terrarium.jpg",
@@ -33,7 +33,7 @@
             "categories": ["gardening"]
         },
         {
-            "id": "2ZYFJ3GM2N",
+            "id": 5,
             "name": "Film Camera",
             "description": "This camera looks like it's a film camera, but it's actually digital.",
             "picture": "static/img/products/film-camera.jpg",
@@ -41,7 +41,7 @@
             "categories": ["photography", "vintage"]
         },
         {
-            "id": "0PUK6V6EV0",
+            "id": 6,
             "name": "Vintage Record Player",
             "description": "It still works.",
             "picture": "static/img/products/record-player.jpg",
@@ -49,7 +49,7 @@
             "categories": ["music", "vintage"]
         },
         {
-            "id": "LS4PSXUNUM",
+            "id": 7,
             "name": "Metal Camping Mug",
             "description": "You probably don't go camping that often but this is better than plastic cups.",
             "picture": "static/img/products/camp-mug.jpg",
@@ -57,7 +57,7 @@
             "categories": ["cookware"]
         },
         {
-            "id": "9SIQT8TOJO",
+            "id": 8,
             "name": "City Bike",
             "description": "This single gear bike probably cannot climb the hills of San Francisco.",
             "picture": "static/img/products/city-bike.jpg",
@@ -65,7 +65,7 @@
             "categories": ["cycling"]
         },
         {
-            "id": "6E92ZMYYFZ",
+            "id": 9,
             "name": "Air Plant",
             "description": "Have you ever wondered whether air plants need water? Buy one and figure out.",
             "picture": "static/img/products/air-plant.jpg",
