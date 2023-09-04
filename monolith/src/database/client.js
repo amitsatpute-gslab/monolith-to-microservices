@@ -8,16 +8,22 @@ const {
   DATABASE_USER,
   DATABASE_PASSWORD,
   DATABASE_NAME,
+  DATABASE_PORT_PG,
+  DATABASE_USER_PG,
+  DATABASE_PASSWORD_PG,
+  USE_MYSQL,
 } = process.env;
 
+const flag = parseInt(USE_MYSQL);
+
 const config = knexStringcase({
-  client: "mysql",
+  client: flag ? "mysql" : "pg",
   connection: {
     host: DATABASE_HOST,
-    port: DATABASE_PORT,
+    port: flag ? DATABASE_PORT : DATABASE_PORT_PG,
     database: DATABASE_NAME,
-    user: DATABASE_USER,
-    password: DATABASE_PASSWORD,
+    user: flag ? DATABASE_USER : DATABASE_USER_PG,
+    password: flag ? DATABASE_PASSWORD : DATABASE_PASSWORD_PG,
     typeCast: function (field, next) {
       if (field.type === "JSON") {
         return JSON.parse(field.string());

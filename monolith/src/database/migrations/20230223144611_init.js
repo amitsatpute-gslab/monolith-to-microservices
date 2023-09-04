@@ -4,7 +4,7 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable("products", (table) => {
-    table.increments('id').primary().unsigned();
+    table.uuid("id").primary().defaultTo(knex.fn.uuid());
     table.string("name").notNullable();
     table.string("description");
     table.string("picture");
