@@ -1,17 +1,17 @@
 module.exports  = [
   {
-    id: "b1069576-1a18-40a4-8ba7-b432b3679f9a",
+    id: "a5c38b23-fe8d-493d-bb2e-ebe940890fa0",
     product_ids: JSON.stringify([
-      "36acddd2-1564-4132-8f92-e02176821858",
-      "2d39f5b9-4d48-40c2-bfd3-b72ef5021208",
+      "cfccad6e-3a1f-4ffd-ad60-bd0eef66c6f8",
+      "61acc187-6591-4a7d-ad74-83245217c959",
     ]),
-    user_id: "08ddc1ec-aabc-4484-ba72-bbabcc16f427",
+    user_id: "d3dec82d-684d-4d0c-9703-c4bd5b330c39",
     total_cost: 80.48,
   },
   {
-    id: "97eeeb81-2b15-4192-a159-eed0f430098e",
-    product_ids: JSON.stringify(["52a77ff0-68cb-4982-9167-b4c286abce1e"]),
-    user_id: "08ddc1ec-aabc-4484-ba72-bbabcc16f427",
+    id: "43ae5a44-a2f3-43c2-a5e7-5d5bb24c87bc",
+    product_ids: JSON.stringify(["32a03f20-6c69-403d-9f19-2d3a2c862a55"]),
+    user_id: "d3dec82d-684d-4d0c-9703-c4bd5b330c39",
     total_cost: 124,
   },
   // {

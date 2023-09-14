@@ -1,11 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-// require("dotenv").config();
-
-import pkg from 'pg';
+const pkg = require('pg')
 const { Pool } = pkg;
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const {
   DATABASE_HOST,

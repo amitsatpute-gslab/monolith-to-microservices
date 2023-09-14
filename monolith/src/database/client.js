@@ -1,6 +1,6 @@
 const Knex = require("knex");
 const knexStringcase = require("knex-stringcase");
-require("dotenv").config();
+// require("dotenv").config();
 
 const {
   DATABASE_HOST,

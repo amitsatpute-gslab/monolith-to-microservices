@@ -1,7 +1,10 @@
-import type { Knex } from "knex";
-import dotenv from "dotenv";
+// Update with your config settings.
 
-dotenv.config({ path: "../../.env" });
+/**
+ * @type { Object.<string, import("knex").Knex.Config> }
+ */
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "../../.env") });
 
 const {
   DATABASE_HOST,
@@ -11,7 +14,7 @@ const {
   DATABASE_NAME,
 } = process.env;
 
-const config: { [key: string]: Knex.Config } = {
+module.exports = {
   development: {
     client: "pg",
     connection: {
@@ -31,4 +34,4 @@ const config: { [key: string]: Knex.Config } = {
   },
 };
 
-export default config;
+
