@@ -8,8 +8,8 @@
     "server": "nodemon ./src/server.js",
     "start": "export $(cat .env) && npm run server",
     "createDb": "export $(cat .env) && node ./src/database/createDB.js",
-    "createDbPg": "export $(cat .env) && npx ts-node --esm ./src/database/createDbPg.ts",
-    "migratePg": "export $(cat .env) && npx ts-node --esm ./node_modules/.bin/knex migrate:latest --knexfile ./src/database/knexfilePg.ts",
+    "createDbPg": "export $(cat .env) && npx node ./src/database/createDbPg.js",
+    "migratePg": "export $(cat .env) && node ./node_modules/.bin/knex migrate:latest --knexfile ./src/database/knexfilePg.js",
     "migrate": "export $(cat .env) && npx knex migrate:latest --knexfile src/database/knexfile.js"
   },
   "keywords": [],
