@@ -1,6 +1,6 @@
 const products = [
   {
-    id: 1,
+    id: "cfccad6e-3a1f-4ffd-ad60-bd0eef66c6f8",
     name: "Vintage Typewriter",
     description: "This typewriter looks good in your living room.",
     picture: "static/img/products/typewriter.jpg",
@@ -8,7 +8,7 @@ const products = [
     categories: JSON.stringify(["vintage"]),
   },
   {
-    id: 2,
+    id: "61acc187-6591-4a7d-ad74-83245217c959",
     name: "Vintage Camera Lens",
     description:
       "You won't have a camera to use it and it probably doesn't work anyway.",
@@ -17,7 +17,7 @@ const products = [
     categories: JSON.stringify(["photography", "vintage"]),
   },
   {
-    id: 3,
+    id: "32a03f20-6c69-403d-9f19-2d3a2c862a55",
     name: "Home Barista Kit",
     description:
       "Always wanted to brew coffee with Chemex and Aeropress at home?",
@@ -26,7 +26,7 @@ const products = [
     categories: JSON.stringify(["cookware"]),
   },
   {
-    id: 4,
+    id: "a72e17d6-9790-41c7-9be9-43037c87e9dd",
     name: "Terrarium",
     description:
       "This terrarium will looks great in your white painted living room.",

@@ -1,17 +1,17 @@
 module.exports  = [
   {
-    id: 1,
+    id: "a5c38b23-fe8d-493d-bb2e-ebe940890fa0",
     product_ids: JSON.stringify([
-      1,
-      2,
+      "cfccad6e-3a1f-4ffd-ad60-bd0eef66c6f8",
+      "61acc187-6591-4a7d-ad74-83245217c959",
     ]),
-    user_id: 1,
+    user_id: "d3dec82d-684d-4d0c-9703-c4bd5b330c39",
     total_cost: 80.48,
   },
   {
-    id: 2,
-    product_ids: JSON.stringify([3]),
-    user_id: 1,
+    id: "43ae5a44-a2f3-43c2-a5e7-5d5bb24c87bc",
+    product_ids: JSON.stringify(["32a03f20-6c69-403d-9f19-2d3a2c862a55"]),
+    user_id: "d3dec82d-684d-4d0c-9703-c4bd5b330c39",
     total_cost: 124,
   },
   // {
