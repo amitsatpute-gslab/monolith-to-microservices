@@ -5,7 +5,7 @@ const products = require("./mockProducts.js");
 async function insertData() {
   await knex("users").insert([
     {
-      id: 1,
+      id: "08ddc1ec-aabc-4484-ba72-bbabcc16f427",
       full_name: "test user",
       address: "Mumbai,MH",
       email: "test.user@gmail.com",
