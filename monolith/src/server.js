@@ -34,7 +34,9 @@ const {
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 const port = process.env.PORT || 4001;
 
 //Load orders and products for pseudo database
